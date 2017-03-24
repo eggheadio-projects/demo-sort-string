@@ -72,3 +72,10 @@ function areAnagrams(s1: string, s2: string) {
   * if there is no key for it from string 1. Then we know we don't have an anagram.
   * Otherwise simply decrement the count
 * Finally we go through all the values in the final map and simply make sure that every value is 0.
+
+```
+import * as assert from "assert";
+assert(areAnagrams('life', 'file'));
+assert(!areAnagrams('life', 'lifl'));
+assert(!areAnagrams('life', 'lifel'));
+```
