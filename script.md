@@ -49,12 +49,26 @@ One simple way of checking the exact same characters is simply to
 
 The complexity in this case will be driven by the sort function which is of the order `nLogn`.
 
-# TODO
-Lets rule out a simple base case where the strings are not of the same length. The intution here is that if s1 characters are indeed all in s2 we don't need to do the reverse check.
+A better way to make sure that the two strings have the same characters is to simply use a Map and make sure that count of characters between the two strings is the same. 
 
 ```js
 function areAnagrams(s1: string, s2: string) {
-  if (s1.length !== s2.length) return false;
-  return false;
+  const charCount = new Map<string, number>();
+  for (const char of s1.split('')) {
+    charCount.set(char, (charCount.get(char) || 0) + 1);
+  }
+  for (const char of s2.split('')) {
+    if (!charCount.has(char)) return false;
+    charCount.set(char, charCount.get(char) - 1);
+  }
+  return Array.from(charCount.values())
+    .every(val => val === 0);
 }
 ```
+* We start by creating a map to count the character 
+* For each character in string 1 
+  * we go ahead and set the count, getting any previous value or initializing it to 0 and then incrementing it.
+* For each character in string 2 
+  * if there is no key for it from string 1. Then we know we don't have an anagram.
+  * Otherwise simply decrement the count
+* Finally we go through all the values in the final map and simply make sure that every value is 0.
