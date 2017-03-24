@@ -34,6 +34,21 @@ and then see if it is equal to s2
 ```
 However in this case the complexity of the algorithm will be equal to possible permutations of s1, so order of n! (where n is the number of characters in the string).
 
+If you read into the requirements you can realize that instead of doing actual rearrangments you simply need to check if they have *exactly* the same characters. 
+
+One simple way of checking the exact same characters is simply to 
+* break the strings into their characters, sort them, and join them again. 
+* we do the same for the second strings.
+* finally we check if the strings are equal.
+
+```js
+  s1 = s1.split().sort().join('');
+  s2 = s2.split().sort().join('');
+  return s1 === s2;
+```
+
+The complexity in this case will be driven by the sort function which is in the order of `nLogn`.
+
 Lets rule out a simple base case where the strings are not of the same length. The intution here is that if s1 characters are indeed all in s2 we don't need to do the reverse check.
 
 ```js
