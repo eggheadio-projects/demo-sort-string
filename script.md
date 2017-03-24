@@ -47,8 +47,9 @@ One simple way of checking the exact same characters is simply to
   return s1 === s2;
 ```
 
-The complexity in this case will be driven by the sort function which is in the order of `nLogn`.
+The complexity in this case will be driven by the sort function which is of the order `nLogn`.
 
+# TODO
 Lets rule out a simple base case where the strings are not of the same length. The intution here is that if s1 characters are indeed all in s2 we don't need to do the reverse check.
 
 ```js
