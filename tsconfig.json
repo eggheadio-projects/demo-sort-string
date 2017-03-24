@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "outDir": "lib"
+    "outDir": "lib",
+    "strictNullChecks": true,
+    "lib": [
+      "es6",
+      "dom"
+    ]
   },
   "include": [
     "src"
