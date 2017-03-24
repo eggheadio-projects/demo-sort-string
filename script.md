@@ -73,10 +73,13 @@ function areAnagrams(s1: string, s2: string) {
   * Otherwise simply decrement the count
 * Finally we go through all the values in the final map and simply make sure that every value is 0.
 
+Since we are simply looping through the character and doing constant work in each iteration the complexity of this version of linear aka O(n).
+
+
+# TEST 
 ```
 import * as assert from "assert";
 assert(areAnagrams('life', 'file'));
 assert(!areAnagrams('life', 'lifl'));
 assert(!areAnagrams('life', 'lifel'));
 ```
-Since we are simply looping through the character and doing constant work in each iteration the complexity of this version of linear aka O(n).
