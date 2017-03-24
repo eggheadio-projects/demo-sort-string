@@ -79,3 +79,4 @@ assert(areAnagrams('life', 'file'));
 assert(!areAnagrams('life', 'lifl'));
 assert(!areAnagrams('life', 'lifel'));
 ```
+Since we are simply looping through the character and doing constant work in each iteration the complexity of this version of linear aka O(n).
