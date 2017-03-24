@@ -10,10 +10,35 @@
  * - 'foo' and 'bar' are not anagrams
  */
 ```
-We will start by creating our areAnagrams function 
+
+* We will start by creating our areAnagrams function 
 
 ```js
 function areAnagrams(s1: string, s2: string) {
 }
 ```
-A na
+* By default it will return false untill proven innocent.
+```js
+function areAnagrams(s1: string, s2: string) {
+  return false;
+}
+```
+
+A plain implementation that derives from the definition would be to check all the arrangments of s1 
+and then see if it is equal to s2
+
+```js
+  for (const arrangement of arrangements(s1)){
+    if (s1 === s2) return true;
+  }
+```
+However in this case the complexity of the algorithm will be equal to possible permutations of s1, so order of n! (where n is the number of characters in the string).
+
+Lets rule out a simple base case where the strings are not of the same length. The intution here is that if s1 characters are indeed all in s2 we don't need to do the reverse check.
+
+```js
+function areAnagrams(s1: string, s2: string) {
+  if (s1.length !== s2.length) return false;
+  return false;
+}
+```
