@@ -17,13 +17,6 @@
 function areAnagrams(s1: string, s2: string) {
 }
 ```
-* By default it will return false untill proven innocent.
-```js
-function areAnagrams(s1: string, s2: string) {
-  return false;
-}
-```
-
 A plain implementation that derives from the definition would be to check all the arrangments of s1 
 and then see if it is equal to s2
 
@@ -32,7 +25,16 @@ and then see if it is equal to s2
     if (s1 === s2) return true;
   }
 ```
-However in this case the complexity of the algorithm will be equal to possible permutations of s1, so order of n! (where n is the number of characters in the string).
+* If no arragment matched we will return false
+```js
+function areAnagrams(s1: string, s2: string) {
+  for (const arrangement of arrangements(s1)){
+    if (s1 === s2) return true;
+  }
+  return false;
+}
+```
+Although such an implementation would work, in this case the complexity of the algorithm will be equal to possible permutations of s1, so order of n! (where n is the number of characters in the string).
 
 If you read into the requirements you can realize that instead of doing actual rearrangments you simply need to check if they have *exactly* the same characters. 
 
