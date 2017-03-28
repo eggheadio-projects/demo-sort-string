@@ -1,7 +1,8 @@
 const foo = [
-    "Alpha",
-    "beta",
-    "Gama"
-]
-foo.sort();
+  'Alpha',
+  'beta',
+  'Gamma',
+  'delta'
+];
+foo.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 console.log(foo);
