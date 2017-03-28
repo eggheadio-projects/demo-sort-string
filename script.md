@@ -1,4 +1,4 @@
-# Case insensitive string sorting arrays
+# Case insensitive sorting for string arrays
 > We look at the default `Array.prototype.sort` behavior and discuss how you can to case insensitive sorts
 
 Here we have an array of a few strings.
