@@ -1,5 +1,5 @@
 # Case insensitive sorting for string arrays
-> We look at the default `Array.prototype.sort` behavior and discuss how you can to case insensitive sorts
+> We look at the default `Array.prototype.sort` behavior and discuss how you can do case insensitive string sorting.
 
 Here we have an array of a few strings.
 
@@ -15,7 +15,7 @@ foo.forEach(x=>console.log(x));
 ```
 
 * If we go ahead and sort them you can see that `Gamma` appears before beta.
-* This is because the default string sorting is case sensitive and capital case strings come before lower case strings in their unicode code points.
+* This is because the default string sorting in JavaScript is case sensitive and capital case strings come before lower case strings in their unicode code points so capital G will appear before lowercase b and d.
 
 ```js
 // A a
