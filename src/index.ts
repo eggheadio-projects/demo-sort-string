@@ -5,4 +5,4 @@ const foo = [
   'delta'
 ];
 foo.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
-console.log(foo);
+foo.forEach(x => console.log(x));
